@@ -1,4 +1,6 @@
-///MEMOIZED FUNCTION
+//MEMOIZED FUNCTION AS A WRAPPER
+
+//MEMOIZED FUNCTION
 const memoized = (fn) => {
   let cache = {};
   return (n) => {
@@ -19,7 +21,7 @@ const memoized2 = function (fn) {
   const cache = {};
   return (a, b, c) => {
     const key = `${a}-${b}-${c}`; // create a key
-    if (cache.hasOwnProperty(key)) {
+    if (key in cache) {
       // search if it's already saved in the cache
       console.log('in memory');
       return cache[key];
